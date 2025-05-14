@@ -27,4 +27,14 @@ public class ContaEspecial extends Conta{
         }
     }
 
+        public boolean transferir(double valor, Conta contaDestino){
+        if(valor > 0 && valor <= getSaldo()){
+            setSaldo(getSaldo() - valor);
+            contaDestino.depositar(valor);
+            return true;
+        }else{
+            return false;
+        }
+     }
+
 }
