@@ -8,4 +8,13 @@ public class ContaCorrente extends Conta {//Não cloquei nenhuma validação ou 
         super(numero, agencia, saldo, dataAbertura, titular);
     }
 
+     public boolean sacar(double valor){
+        if(saldo > 0 && valor <= saldo){
+            saldo -= valor;
+            return true;
+        }else{
+            return false;
+        }
+     }
+
 }
