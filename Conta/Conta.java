@@ -52,6 +52,14 @@ public class Conta {
          this.titular = titular;
      }
 
+     public boolean sacar(double valor){
+        if(saldo > 0 && valor <= saldo){
+            saldo -= valor;
+            return true;
+        }else{
+            return false;
+        }
+     }
 
      public boolean depositar(double valor){
         if(valor > 0){
